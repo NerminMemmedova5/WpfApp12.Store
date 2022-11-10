@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="WpfApp12.InfoUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp12"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Canvas Grid.Column="0" Background="White" Height="600" Width="400"  Margin="20">
+            <Label Canvas.Top="10" Canvas.Left="50" Width="300" HorizontalContentAlignment="Center"
+                   FontSize="23" FontWeight="Black" Content="{Binding Mobile.Name,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"></Label>
+            <Image Canvas.Top="60" Canvas.Left="100"  Source="{Binding Mobile.Image}"></Image>
+            <Label Canvas.Top="300" Canvas.Left="20" Width="70"
+                   FontSize="23" FontWeight="Black" Content="{Binding Mobile.Price}"></Label>
+            <Image Canvas.Top="306" Canvas.Left="85" Width="30" Height="30" Source="{Binding Mobile.MoneyImage}"></Image>
+            <Image Canvas.Top="306" Canvas.Left="200" Width="30" Height="30" Source="{Binding Mobile.CardImage}"></Image>
+            <Label Canvas.Top="300" Canvas.Left="220" Width="150" 
+                   FontSize="20" Content="{Binding Mobile.CardContent}"></Label>
+            <Grid Canvas.Top="380" Canvas.Left="10" Width="380" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Column="0" >
+                    <Label FontSize="20" Background="LightGray" Content="Emeliyyat sistemi"></Label>
+                    <Label FontSize="20" Background="White" Content="Daxili yaddas"></Label>
+                    <Label FontSize="20" Background="LightGray" Content="Operativ yaddas"></Label>
+                    <Label FontSize="20" Background="White" Content="Reng"></Label>
+                    <Label FontSize="20" Background="LightGray" Content="Year"></Label>
+                </StackPanel>
+                <StackPanel Grid.Column="1">
+                    <Label FontSize="20" HorizontalContentAlignment="Right" Background="LightGray" Content="{Binding Mobile.System}"></Label>
+                    <Label FontSize="20" HorizontalContentAlignment="Right" Background="White" Content="{Binding Mobile.Memory}"></Label>
+                    <Label FontSize="20" HorizontalContentAlignment="Right" Background="LightGray" Content="{Binding Mobile.OperativeMemory}"></Label>
+                    <Label FontSize="20" HorizontalContentAlignment="Right" Background="White" Content="{Binding Mobile.Color}"></Label>
+                    <Label FontSize="20" HorizontalContentAlignment="Right" Background="LightGray" Content="{Binding Mobile.Year}"></Label>
+                </StackPanel>
+            </Grid>
+            
+        </Canvas>
+    </Grid>
+</UserControl>
